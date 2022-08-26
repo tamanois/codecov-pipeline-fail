@@ -8,7 +8,7 @@ describe('compute', () => {
     })
 
     it('should throw if Nan provided', () => {
-      const shouldTrow = () => { sum(3, 6) }
+      const shouldTrow = () => { sum(3, NaN) }
       expect(shouldTrow).toThrow(CustomError)
     })
   })
