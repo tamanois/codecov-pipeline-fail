@@ -1,0 +1,29 @@
+{
+  "name": "codecov-pipeline-fail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "start": "ts-node --esm src/index.ts",
+    "start:dev": "NODE_ENV=DEV nodemon src/index.ts",
+    "test": "test"
+  },
+  "keywords": [
+    "codecov",
+    "pipeline",
+    "fail"
+  ],
+  "author": "Joel Chinda",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.13",
+    "typescript": "^4.8.2"
+  }
+}
