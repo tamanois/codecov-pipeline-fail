@@ -1,4 +1,4 @@
-import { CustomError } from "./errors.js"
+import { CustomError } from "./errors"
 
 const sum = (a: number, b: number) => {
   if (isNaN(a) || isNaN(b)) {

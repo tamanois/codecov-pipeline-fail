@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import { HttpError } from "./errors.js"
+import { HttpError } from "./errors"
 
  export const errorMiddleware = (err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err) {

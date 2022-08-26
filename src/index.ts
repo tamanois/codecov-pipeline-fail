@@ -1,7 +1,7 @@
 import express from 'express'
-import { sum } from './compute.js'
-import { HttpError } from './errors.js'
-import { errorMiddleware } from './middlewares.js'
+import { sum } from './compute'
+import { HttpError } from './errors'
+import { errorMiddleware } from './middlewares'
 
 const PORT = process.env.PORT ?? 10000
 
