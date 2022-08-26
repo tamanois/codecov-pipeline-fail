@@ -32,3 +32,6 @@ jobs:
 
       - run: npm i
       - run: npm test
+      - run: curl -Os https://uploader.codecov.io/latest/linux/codecov
+      - run: chmod +x codecov
+      - run: ./codecov
