@@ -6,7 +6,7 @@ TEAM="${CODECOV_TEAM:-your_team}"
 PROJECT="${CODECOV_PROJECT:-your_project}"
 MAX_ERROR_DETECTION_TIME=120 #seconds
 TIMEOUT=240 #seconds
-RETRY_INTERVAL=10 #seconds
+RETRY_INTERVAL=25 #seconds
 
 TOKEN="${CODECOV_API_TOKEN:-your_api_token}"
 COMMIT_ID="${COMMIT_SHA}"
@@ -57,10 +57,10 @@ end=$(($SECONDS+$TIMEOUT))
 ## loop till data available
 while : ; do
   elapsed=$(($SECONDS-$start))
-  echo "Elapsed time $elapsed"
+  #echo "Elapsed time $elapsed"
 
   results=$(curl -s -H "Authorization: $CODECOV_API_TOKEN" $URL)
-  echo results: $results
+  #echo results: $results
 
   processingState=$(fetchDataProcessingState $elapsed)
   # Exit if parsing failed
