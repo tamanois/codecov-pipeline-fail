@@ -56,7 +56,12 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     env:
-      COMMIT_SHA: ${GITHUB_SHA}
+      COMMIT_SHA: ${{ github.sha }}
+      CODECOV_PROVIDER: gh
+      CODECOV_TEAM: ${{ secrets.CODECOV_TEAM }}
+      CODECOV_PROJECT: codecov-pipeline-fail
+      CODECOV_API_TOKEN: ${{ secrets.CODECOV_API_TOKEN }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     steps:
 
       - name: Checkout repository

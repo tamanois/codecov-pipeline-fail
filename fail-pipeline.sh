@@ -9,11 +9,13 @@ TIMEOUT=240 #seconds
 RETRY_INTERVAL=10 #seconds
 
 TOKEN="${CODECOV_API_TOKEN:-your_api_token}"
-COMMIT_ID="$COMMIT_SHA"
+COMMIT_ID="${COMMIT_SHA}"
 MINIMUM_COVERAGE=95
 
 #URL
 URL=https://codecov.io/api/$PROVIDER/$TEAM/$PROJECT/commits/$COMMIT_ID
+
+echo url: $URL
 
 ## FUNCTIONS
 
@@ -55,9 +57,10 @@ end=$(($SECONDS+$TIMEOUT))
 ## loop till data available
 while : ; do
   elapsed=$(($SECONDS-$start))
-  #echo "Elapsed time $elapsed"
+  echo "Elapsed time $elapsed"
 
-  results=$(curl -s -H "Authorization: $TOKEN" $URL)
+  results=$(curl -s -H "Authorization: $CODECOV_API_TOKEN" $URL)
+  echo results: $results
 
   processingState=$(fetchDataProcessingState $elapsed)
   # Exit if parsing failed
