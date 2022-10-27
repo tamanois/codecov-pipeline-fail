@@ -8,7 +8,7 @@ on:
     types: [closed]
   push:
     branches:
-      - "*"
+      - '**'
 
 env:
   CI: true
