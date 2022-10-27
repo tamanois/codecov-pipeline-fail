@@ -9,7 +9,7 @@ TIMEOUT=240 #seconds
 RETRY_INTERVAL=25 #seconds
 
 TOKEN="${CODECOV_API_TOKEN:-your_api_token}"
-COMMIT_ID=$(git rev-parse HEAD)
+COMMIT_ID="${COMMIT_SHA}"
 MINIMUM_COVERAGE=70
 
 #URL
